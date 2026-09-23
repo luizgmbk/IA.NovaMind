@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d1117">
+  <title>NovaMind AI</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">N</div><div><strong>NovaMind</strong><small>AI</small></div></div>
+    <button id="newChat" class="new">＋ Novo chat</button>
+    <div class="section-title">Conversas</div>
+    <div id="chatList" class="chat-list"></div>
+    <div class="sidebar-bottom">
+      <button id="themeBtn" class="ghost">◐ Tema</button>
+      <span id="serverState" class="status">Conectando…</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header>
+      <div>
+        <h1>NovaMind</h1>
+        <p id="subtitle">Sua IA pessoal na nuvem</p>
+      </div>
+      <div class="controls">
+        <select id="mode">
+          <option value="auto">Automático</option>
+          <option value="fast">Rápido</option>
+          <option value="deep">Profundo</option>
+        </select>
+        <label class="toggle"><input id="webToggle" type="checkbox"> Web</label>
+      </div>
+    </header>
+
+    <section id="messages" class="messages">
+      <div class="welcome">
+        <div class="hero-logo">N</div>
+        <h2>Como posso ajudar?</h2>
+        <p>Converse, estude, programe, pesquise e crie.</p>
+        <div class="chips">
+          <button data-prompt="Me ensine algo novo de um jeito fácil de entender.">Me ensine algo</button>
+          <button data-prompt="Me ajude a criar um projeto do zero.">Criar projeto</button>
+          <button data-prompt="Explique um assunto difícil passo a passo.">Explicar</button>
+          <button data-prompt="Me ajude com programação.">Programar</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="configNotice" class="notice hidden">
+      O site está online, mas o modelo de IA na nuvem ainda precisa ser configurado.
+    </div>
+
+    <form id="composer" class="composer">
+      <textarea id="input" rows="1" placeholder="Pergunte qualquer coisa…" maxlength="20000"></textarea>
+      <button id="send" type="submit" aria-label="Enviar">➤</button>
+    </form>
+    <div class="foot">NovaMind pode cometer erros. Verifique informações importantes.</div>
+  </main>
+
+  <dialog id="accessDialog">
+    <form method="dialog" id="accessForm">
+      <h3>Acesso à NovaMind</h3>
+      <p>Digite seu código de acesso.</p>
+      <input id="accessInput" type="password" autocomplete="current-password" placeholder="Código">
+      <button value="default">Entrar</button>
+    </form>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
