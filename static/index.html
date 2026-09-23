@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <div class="brand"><div class="logo">N</div><div><strong>NovaMind</strong><small>AI</small></div></div>
     <button id="newChat" class="new">＋ Novo chat</button>
     <div class="section-title">Conversas</div>
@@ -21,10 +21,8 @@
 
   <main class="main">
     <header>
-      <div>
-        <h1>NovaMind</h1>
-        <p id="subtitle">Sua IA pessoal na nuvem</p>
-      </div>
+      <button id="menuBtn" class="mobile-menu">☰</button>
+      <div class="head-title"><h1>NovaMind</h1><p id="subtitle">Sua IA pessoal na nuvem</p></div>
       <div class="controls">
         <select id="mode">
           <option value="auto">Automático</option>
@@ -32,29 +30,25 @@
           <option value="deep">Profundo</option>
         </select>
         <label class="toggle"><input id="webToggle" type="checkbox"> Web</label>
+        <label class="toggle"><input id="codeToggle" type="checkbox"> Python</label>
       </div>
     </header>
 
-    <section id="messages" class="messages">
-      <div class="welcome">
-        <div class="hero-logo">N</div>
-        <h2>Como posso ajudar?</h2>
-        <p>Converse, estude, programe, pesquise e crie.</p>
-        <div class="chips">
-          <button data-prompt="Me ensine algo novo de um jeito fácil de entender.">Me ensine algo</button>
-          <button data-prompt="Me ajude a criar um projeto do zero.">Criar projeto</button>
-          <button data-prompt="Explique um assunto difícil passo a passo.">Explicar</button>
-          <button data-prompt="Me ajude com programação.">Programar</button>
-        </div>
-      </div>
-    </section>
+    <section id="messages" class="messages"></section>
 
     <div id="configNotice" class="notice hidden">
-      O site está online, mas o modelo de IA na nuvem ainda precisa ser configurado.
+      Falta somente configurar a chave do provedor de IA no servidor.
     </div>
 
+    <div id="attachments" class="attachments hidden"></div>
+
     <form id="composer" class="composer">
+      <label class="attach" title="Anexar arquivo">
+        ＋
+        <input id="fileInput" type="file" multiple accept=".pdf,.docx,.xlsx,.csv,.txt,.md,.json,.html,.py,.js,.ts,.css,.png,.jpg,.jpeg,.webp" hidden>
+      </label>
       <textarea id="input" rows="1" placeholder="Pergunte qualquer coisa…" maxlength="20000"></textarea>
+      <button id="stop" type="button" class="stop hidden" title="Parar">■</button>
       <button id="send" type="submit" aria-label="Enviar">➤</button>
     </form>
     <div class="foot">NovaMind pode cometer erros. Verifique informações importantes.</div>
